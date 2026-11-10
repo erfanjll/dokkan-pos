@@ -22,20 +22,55 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
-      includeAssets: ['favicon.svg', 'icon-192.png', 'icon-512.png'],
+      includeAssets: ['favicon.svg', 'icon-192.png', 'icon-512.png', 'screenshot-mobile.png', 'screenshot-desktop.png'],
       manifest: {
-        id: './',
+        id: 'https://erfanjll.github.io/dokkan-pos/',
         name: 'دکان | نرم‌افزار حسابداری و انبارداری پوشاک',
         short_name: 'دکان',
         description: 'نرم‌افزار صندوق، حسابداری و انبارداری کاملاً آفلاین دکان ویژه موبایل و تبلت',
         theme_color: '#0f172a',
         background_color: '#0f172a',
         display: 'standalone',
+        display_override: ['standalone', 'window-controls-overlay', 'minimal-ui'],
         orientation: 'any',
         dir: 'rtl',
         lang: 'fa',
         start_url: './',
         scope: './',
+        categories: ['business', 'finance', 'productivity', 'utilities'],
+        prefer_related_applications: false,
+        shortcuts: [
+          {
+            name: 'فاکتور جدید',
+            short_name: 'فاکتور',
+            description: 'ثبت و صدور فاکتور جدید',
+            url: './',
+            icons: [{ src: 'icon-192.png', sizes: '192x192' }]
+          },
+          {
+            name: 'انبار و کالاها',
+            short_name: 'انبار',
+            description: 'مشاهده موجودی انبار کالا',
+            url: './',
+            icons: [{ src: 'icon-192.png', sizes: '192x192' }]
+          }
+        ],
+        screenshots: [
+          {
+            src: 'screenshot-mobile.png',
+            sizes: '540x960',
+            type: 'image/png',
+            form_factor: 'narrow',
+            label: 'نمای موبایل دکان'
+          },
+          {
+            src: 'screenshot-desktop.png',
+            sizes: '1280x720',
+            type: 'image/png',
+            form_factor: 'wide',
+            label: 'نمای تبلت و دسکتاپ دکان'
+          }
+        ],
         icons: [
           {
             src: 'icon-192.png',
