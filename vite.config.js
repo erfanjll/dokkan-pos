@@ -5,6 +5,7 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   server: {
     host: true,
     port: 5173,
@@ -23,7 +24,7 @@ export default defineConfig({
       },
       includeAssets: ['favicon.svg', 'icon-192.png', 'icon-512.png'],
       manifest: {
-        id: '/',
+        id: './',
         name: 'دکان | نرم‌افزار حسابداری و انبارداری پوشاک',
         short_name: 'دکان',
         description: 'نرم‌افزار صندوق، حسابداری و انبارداری کاملاً آفلاین دکان ویژه موبایل و تبلت',
@@ -33,8 +34,8 @@ export default defineConfig({
         orientation: 'any',
         dir: 'rtl',
         lang: 'fa',
-        start_url: '/',
-        scope: '/',
+        start_url: './',
+        scope: './',
         icons: [
           {
             src: 'icon-192.png',
