@@ -19,6 +19,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>دکان | حسابداری و انبارداری آفلاین پوشاک</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js', { scope: './' })
+            .then((reg) => reg.update().catch(() => {}))
+            .catch(() => {});
+        });
+      }
+    </script>
     <script type="module" crossorigin src="./assets/index-_L8lCkCa.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BYBxuFKk.css">
   <link rel="manifest" href="./manifest.webmanifest"></head>
