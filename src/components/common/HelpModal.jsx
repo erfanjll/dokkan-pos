@@ -43,8 +43,8 @@ export default function HelpModal({ isOpen, onClose }) {
           </div>
         </div>
 
-        {/* منوی تب‌های راهنما (اسکرول افقی روان) */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-1">
+        {/* منوی تب‌های راهنما (شبکه‌ای، کاملاً ریسپانسیو و بدون بریدگی) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
           {helpTabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeHelpTab === tab.id;
@@ -52,14 +52,15 @@ export default function HelpModal({ isOpen, onClose }) {
               <button
                 key={tab.id}
                 onClick={() => setActiveHelpTab(tab.id)}
-                className={`min-h-[42px] px-3.5 rounded-xl font-bold text-xs flex items-center gap-2 whitespace-nowrap transition-all cursor-pointer active:scale-95 shrink-0 ${
+                type="button"
+                className={`min-h-[46px] px-2.5 py-2 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 transition-all cursor-pointer active:scale-95 ${
                   isActive
-                    ? 'bg-slate-700 text-white shadow-md ring-2 ring-emerald-500'
-                    : 'bg-slate-800/80 text-slate-400 hover:text-white'
+                    ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 ring-2 ring-emerald-400'
+                    : 'bg-slate-800/90 text-slate-300 hover:text-white hover:bg-slate-700/80 border border-slate-700/70'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${tab.color}`} />
-                <span>{tab.label}</span>
+                <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : tab.color}`} />
+                <span className="truncate">{tab.label}</span>
               </button>
             );
           })}
