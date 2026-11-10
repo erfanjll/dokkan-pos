@@ -12,8 +12,8 @@ export default function Navigation({ activeTab, setActiveTab }) {
   ];
 
   return (
-    <nav className="no-print bg-slate-900 border-b border-slate-800 px-3 sm:px-6 py-2.5">
-      <div className="max-w-7xl mx-auto flex items-center justify-start gap-2 overflow-x-auto pb-1 sm:pb-0">
+    <nav className="no-print bg-slate-900 border-b border-slate-800 px-3 sm:px-6 py-2">
+      <div className="max-w-7xl mx-auto flex items-center justify-start gap-2 overflow-x-auto py-1 sm:py-1.5">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -23,8 +23,8 @@ export default function Navigation({ activeTab, setActiveTab }) {
               onClick={() => setActiveTab(tab.id)}
               className={`min-h-[46px] sm:min-h-[50px] px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-2xl flex items-center gap-2 text-sm sm:text-base font-bold whitespace-nowrap transition-all duration-200 cursor-pointer active:scale-95 shrink-0 ${
                 isActive
-                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30'
-                  : 'bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-800'
+                  ? 'bg-emerald-600 text-white shadow-sm ring-1 ring-emerald-400/60'
+                  : 'bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/40'
               }`}
             >
               <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${isActive ? 'text-white' : 'text-slate-400'}`} />

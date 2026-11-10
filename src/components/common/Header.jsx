@@ -44,7 +44,7 @@ export default function Header({ onQuickNewInvoice, onOpenHelp }) {
           {onQuickNewInvoice && (
             <button
               onClick={onQuickNewInvoice}
-              className="min-h-[44px] sm:min-h-[48px] px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold flex items-center gap-1.5 sm:gap-2 shadow-lg shadow-emerald-600/30 active:scale-95 transition-all cursor-pointer text-xs sm:text-base"
+              className="min-h-[44px] sm:min-h-[48px] px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold flex items-center gap-1.5 sm:gap-2 shadow-sm ring-1 ring-emerald-400/50 active:scale-95 transition-all cursor-pointer text-xs sm:text-base"
             >
               <Plus className="w-5 h-5 stroke-[2.5]" />
               <span>فاکتور جدید</span>

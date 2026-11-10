@@ -55,7 +55,7 @@ export default function HelpModal({ isOpen, onClose }) {
                 type="button"
                 className={`min-h-[46px] px-2.5 py-2 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 transition-all cursor-pointer active:scale-95 ${
                   isActive
-                    ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 ring-2 ring-emerald-400'
+                    ? 'bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-400'
                     : 'bg-slate-800/90 text-slate-300 hover:text-white hover:bg-slate-700/80 border border-slate-700/70'
                 }`}
               >
@@ -330,7 +330,7 @@ export default function HelpModal({ isOpen, onClose }) {
         <div className="pt-2 flex justify-end">
           <button
             onClick={onClose}
-            className="min-h-[46px] px-8 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold active:scale-95 transition-all cursor-pointer shadow-lg shadow-emerald-600/30"
+            className="min-h-[46px] px-8 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold active:scale-95 transition-all cursor-pointer shadow-sm ring-1 ring-emerald-400/50"
           >
             متوجه شدم، بستن راهنما
           </button>
