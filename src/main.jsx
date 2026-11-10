@@ -8,13 +8,27 @@ import { registerSW } from 'virtual:pwa-register'
 const updateSW = registerSW({
   immediate: true,
   onNeedRefresh() {
-    // بازنشانی و لود نسخه جدید بلافاصله پس از دریافت تغییرات
     updateSW(true)
   },
   onOfflineReady() {
     console.log('App ready to work offline')
   }
 })
+
+// اجبار مرورگر به بررسی فوری نسخه جدید سرور و لود خودکار
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.ready.then((reg) => {
+    reg.update().catch(() => {})
+  })
+
+  let refreshing = false
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!refreshing) {
+      refreshing = true
+      window.location.reload()
+    }
+  })
+}
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

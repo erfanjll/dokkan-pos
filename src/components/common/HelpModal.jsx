@@ -60,7 +60,7 @@ export default function HelpModal({ isOpen, onClose }) {
                 }`}
               >
                 <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : tab.color}`} />
-                <span className="truncate">{tab.label}</span>
+                <span className="whitespace-nowrap sm:whitespace-normal">{tab.label}</span>
               </button>
             );
           })}
